@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-const Nav = ({ homeRef, educationRef, workRef, portfolioRef, onToggleDarkMode }) => {
+const Nav = ({ homeRef, educationRef, workRef, portfolioRef, contactoRef, onToggleDarkMode }) => {
     const [toggleMenu, setToggleMenu] = useState(false)
 
     const navIconHandler = e => {
@@ -24,6 +24,7 @@ const Nav = ({ homeRef, educationRef, workRef, portfolioRef, onToggleDarkMode })
                         <li className='text-lg cursor-pointer mx-3 my-5 text-blue-900 dark:text-blue-200 dark:hover:text-cyan-200 hover:text-blue-700 border-b-2 border-transparent hover:border-blue-900 transition dark:hover:border-blue-300 duration-300 ease-in-out' onClick={() => executeScroll(educationRef)}>Educación</li>
                         <li className='text-lg cursor-pointer mx-3 my-5 text-blue-900 dark:text-blue-200 dark:hover:text-cyan-200 hover:text-blue-700 border-b-2 border-transparent hover:border-blue-900 transition dark:hover:border-blue-300 duration-300 ease-in-out' onClick={() => executeScroll(workRef)}>Trabajos</li>
                         <li className='text-lg cursor-pointer mx-3 my-5 text-blue-900 dark:text-blue-200 dark:hover:text-cyan-200 hover:text-blue-700 border-b-2 border-transparent hover:border-blue-900 transition dark:hover:border-blue-300 duration-300 ease-in-out' onClick={() => executeScroll(portfolioRef)}>Portafolio</li>
+                        <li className='text-lg cursor-pointer mx-3 my-5 text-blue-900 dark:text-blue-200 dark:hover:text-cyan-200 hover:text-blue-700 border-b-2 border-transparent hover:border-blue-900 transition dark:hover:border-blue-300 duration-300 ease-in-out' onClick={() => executeScroll(contactoRef)}>Contacto</li>
                         <li className='text-lg cursor-pointer mx-3 my-5 text-blue-900 dark:text-blue-200 dark:hover:text-cyan-200 hover:text-blue-700 border-b-2 border-transparent hover:border-blue-900 transition dark:hover:border-blue-300 duration-300 ease-in-out'>
                             <a href="/Franco_Loto.pdf" target="_blank" rel="noopener noreferrer">Descargar CV</a>
                         </li>
@@ -80,6 +81,7 @@ const Nav = ({ homeRef, educationRef, workRef, portfolioRef, onToggleDarkMode })
                         <div className="mx-3 my-5 text-blue-900 dark:text-blue-300 dark:hover:text-blue-200 hover:text-blue-700 transition" onClick={() => executeScroll(educationRef)}>Educación</div>
                         <div className="mx-3 my-5 text-blue-900 dark:text-blue-300 dark:hover:text-blue-200 hover:text-blue-700 transition" onClick={() => executeScroll(workRef)}>Trabajos</div>
                         <div className="mx-3 my-5 text-blue-900 dark:text-blue-300 dark:hover:text-blue-200 hover:text-blue-700 transition" onClick={() => executeScroll(portfolioRef)}>Portafolio</div>
+                        <div className="mx-3 my-5 text-blue-900 dark:text-blue-300 dark:hover:text-blue-200 hover:text-blue-700 transition" onClick={() => executeScroll(contactoRef)}>Contacto</div>
                         <div className='mx-3 my-5 text-blue-900 dark:text-blue-300 dark:hover:text-blue-200 hover:text-blue-700 transition'>
                             <a href="/Franco_Loto.pdf" target="_blank" rel="noopener noreferrer">Descargar CV</a>
                         </div>
