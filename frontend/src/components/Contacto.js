@@ -6,11 +6,11 @@ const Contacto = ({ contactoRef }) => {
         
         <section className='mt-8 flex justify-center' id="contacto" ref={contactoRef}>
             <div className='max-w-2xl mx-auto p-3 rounded-lg border border-blue-900 dark:border-blue-300' >
-            <h2 className='text-center mb-6 text-3xl text-blue-900 dark:text-blue-300'>Contactame</h2>
+            <h2 className='text-center mb-6 text-3xl text-blue-900 dark:text-blue-100'>Contactame</h2>
                 <div>
                     <form action="https://formspree.io/f/mnqklnnl" method="POST">
                         <div className='mt-3'>
-                            <label className='leading-10 font-semibold text-blue-900 dark:text-blue-300' for="name">Nombre</label>
+                            <label className='leading-10 font-semibold text-blue-900 dark:text-blue-100' htmlFor="name">Nombre</label>
                             <input
                               type="text"
                               id="name"
@@ -21,7 +21,7 @@ const Contacto = ({ contactoRef }) => {
                             />
                         </div>
                         <div className='mt-3'>
-                            <label className='leading-10 font-semibold text-blue-900 dark:text-blue-300' for="email">Email</label>
+                            <label className='leading-10 font-semibold text-blue-900 dark:text-blue-100' htmlFor="email">Email</label>
                             <input
                               type="email"
                               id="email"
@@ -32,7 +32,7 @@ const Contacto = ({ contactoRef }) => {
                             />
                         </div>
                         <div>
-                            <label className='leading-10 font-semibold text-blue-900 dark:text-blue-300' for="mensaje">Mensaje</label>
+                            <label className='leading-10 font-semibold text-blue-900 dark:text-blue-100' htmlFor="mensaje">Mensaje</label>
                             <textarea
                               id="mensaje"
                               cols="50"
@@ -47,7 +47,7 @@ const Contacto = ({ contactoRef }) => {
                           type="submit"
                           value="Enviar"
                           id="submit-btn"
-                          className="w-full py-2 px-3 mt-6 bg-blue-900 hover:bg-blue-950 dark:bg-cyan-300 dark:hover:bg-cyan-400 border-2 border-blue-900 dark:border-blue300 rounded-lg text-base text-blue-100 dark:text-blue-900 font-bold transition duration-300 cursor-pointer"
+                          className="w-full py-2 px-3 mt-6 bg-blue-900 hover:bg-blue-950 dark:bg-blue-300 dark:hover:bg-blue-400 border-2 border-blue-900 dark:border-blue-900 rounded-lg text-base text-blue-100 dark:text-blue-900 font-bold transition duration-300 cursor-pointer"
                         />
 
                     </form>

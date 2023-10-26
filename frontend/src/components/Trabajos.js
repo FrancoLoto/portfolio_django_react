@@ -18,7 +18,7 @@ const Trabajos = ({ workRef }) => {
     return(
             <div className='md:h-screen pt-24' ref={workRef}>
                 <div className='mb-5 mx-5'>
-                <h2 className='text-5xl mb-3 text-blue-900 dark:text-blue-300'>Mi experiencia laboral</h2>
+                <h2 className='text-5xl mb-3 text-blue-900 dark:text-blue-100'>Mi experiencia laboral</h2>
                 <p className='text-lg text-blue-700 dark:text-cyan-300'>Aquí está mi experiencia laboral.</p>
                 </div>
 

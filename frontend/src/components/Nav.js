@@ -26,9 +26,9 @@ const Nav = ({ homeRef, educationRef, workRef, portfolioRef, contactoRef, onTogg
                         <li className='text-lg cursor-pointer mx-3 my-5 text-blue-900 dark:text-blue-200 dark:hover:text-cyan-200 hover:text-blue-700 border-b-2 border-transparent hover:border-blue-900 transition dark:hover:border-blue-300 duration-300 ease-in-out' onClick={() => executeScroll(portfolioRef)}>Portafolio</li>
                         <li className='text-lg cursor-pointer mx-3 my-5 text-blue-900 dark:text-blue-200 dark:hover:text-cyan-200 hover:text-blue-700 border-b-2 border-transparent hover:border-blue-900 transition dark:hover:border-blue-300 duration-300 ease-in-out' onClick={() => executeScroll(contactoRef)}>Contacto</li>
                         <li className='text-lg cursor-pointer mx-3 my-5 text-blue-900 dark:text-blue-200 dark:hover:text-cyan-200 hover:text-blue-700 border-b-2 border-transparent hover:border-blue-900 transition dark:hover:border-blue-300 duration-300 ease-in-out'>
-                            <a href="/Franco_Loto.pdf" target="_blank" rel="noopener noreferrer">Descargar CV</a>
+                            <a href="/Franco_Loto.pdf" target="_blank" rel="noopener noreferrer">CV</a>
                         </li>
-                        <li className='cursor-pointer mx-7 my-5'>
+                        <li className='cursor-pointer mx-14 my-5'>
                             <button onClick={onToggleDarkMode}>
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
@@ -70,6 +70,23 @@ const Nav = ({ homeRef, educationRef, workRef, portfolioRef, contactoRef, onTogg
                       >
                     <path d='M4 6h16M4 12h16M4 18h16'></path>
                     </svg>
+
+                    <button onClick={onToggleDarkMode} className="mr-2">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    strokeWidth={1.5}
+                                    stroke="currentColor"
+                                    className="w-6 h-6 text-blue-900 hover:text-blue-700 dark:text-blue-200 dark:hover:text-cyan-200"
+                                >
+                                    <path
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z"
+                                    />
+                                </svg>
+                            </button>
 
                     
                 </div>

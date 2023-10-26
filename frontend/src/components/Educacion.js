@@ -18,7 +18,7 @@ const Educacion = ( { educationRef }) => {
     return(
             <div className='md:h-screen pt-24' ref={educationRef}>
                 <div className='mb-5 mx-5'>
-                <h2 className='text-5xl mb-3 text-blue-900 dark:text-blue-200'>Mi educación</h2>
+                <h2 className='text-5xl mb-3 text-blue-900 dark:text-blue-100'>Mi educación</h2>
                 <p className='text-lg text-blue-700 dark:text-cyan-300'>Acá está la educación que tengo.</p>
                 </div>
 
