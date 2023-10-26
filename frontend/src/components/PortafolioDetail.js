@@ -13,8 +13,6 @@ function PortafolioDetail() {
         // Realizar una solicitud GET al endpoint de detalle del proyecto en tu API
         axios.get(`/portfolio/detail/${projectId}`)
           .then((response) => {
-            
-            console.log('Respuesta de la solicitud:', response); // Agrega esta línea
             setProject(response.data.project);
           })
           .catch((error) => {
@@ -30,7 +28,7 @@ function PortafolioDetail() {
             <>
             <article className="px-4 py-24 mx-auto max-w-7xl" itemid="#" itemscope itemtype="http://schema.org/BlogPosting">
               <div className="w-full mx-auto mb-12 text-left md:w-3/4 lg:w-1/2">
-                <img src="/brand/og.png" class="object-cover w-full h-64 bg-center rounded-lg" alt="Kutty" />
+                <img src={project.image} class="object-cover w-full h-64 bg-center rounded-lg" alt="Kutty" />
                 <p className="mt-6 mb-2 text-xs font-semibold tracking-wider uppercase text-primary">Development</p>
                 <h1 className="mb-3 text-3xl font-bold leading-tight text-gray-900 md:text-4xl" itemprop="headline" title="Rise of Tailwind - A Utility First CSS Framework">
                   {project.title}
@@ -54,6 +52,11 @@ function PortafolioDetail() {
                   </a>
                 </div>
                 <div className="flex items-center text-gray-700">
+                <div className="ml-2">
+                    <p className="text-sm font-semibold text-gray-800">{project.created_at}</p>
+                    
+                    
+                  </div>
                   <div className="ml-2">
                     <p className="text-sm font-semibold text-gray-800">Tecnologías utilizadas</p>
                     {project.tech_tags}

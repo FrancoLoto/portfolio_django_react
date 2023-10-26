@@ -3,7 +3,7 @@ from datetime import date
 
 
 def proyect_image_directory(instance, filename):
-    return "portfolio/{0}/{1}".format(instance.title, filename)
+    return "portfolio/{0}".format(filename)
 
 
 class Education(models.Model):
@@ -28,21 +28,6 @@ class TechnologyTag(models.Model):
 
     def __str__(self):
         return self.name
-
-
-class Work(models.Model):
-    company = models.CharField(max_length=255)
-    job_title = models.CharField(max_length=255, default='')
-    years = models.CharField(max_length=25)
-    description = models.TextField()
-    ordinal = models.IntegerField()
-
-    class Meta:
-        verbose_name = "Trabajo"
-        verbose_name_plural = "Trabajos"
-
-    def __str__(self):
-        return self.job_title
 
 
 class Portfolio(models.Model):

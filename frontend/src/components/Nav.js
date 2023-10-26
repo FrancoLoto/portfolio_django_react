@@ -22,7 +22,6 @@ const Nav = ({ homeRef, educationRef, workRef, portfolioRef, contactoRef, onTogg
                     </span>
                     <ul className='flex '>
                         <li className='text-lg cursor-pointer mx-3 my-5 text-blue-900 dark:text-blue-200 dark:hover:text-cyan-200 hover:text-blue-700 border-b-2 border-transparent hover:border-blue-900 transition dark:hover:border-blue-300 duration-300 ease-in-out' onClick={() => executeScroll(educationRef)}>Educación</li>
-                        <li className='text-lg cursor-pointer mx-3 my-5 text-blue-900 dark:text-blue-200 dark:hover:text-cyan-200 hover:text-blue-700 border-b-2 border-transparent hover:border-blue-900 transition dark:hover:border-blue-300 duration-300 ease-in-out' onClick={() => executeScroll(workRef)}>Trabajos</li>
                         <li className='text-lg cursor-pointer mx-3 my-5 text-blue-900 dark:text-blue-200 dark:hover:text-cyan-200 hover:text-blue-700 border-b-2 border-transparent hover:border-blue-900 transition dark:hover:border-blue-300 duration-300 ease-in-out' onClick={() => executeScroll(portfolioRef)}>Portafolio</li>
                         <li className='text-lg cursor-pointer mx-3 my-5 text-blue-900 dark:text-blue-200 dark:hover:text-cyan-200 hover:text-blue-700 border-b-2 border-transparent hover:border-blue-900 transition dark:hover:border-blue-300 duration-300 ease-in-out' onClick={() => executeScroll(contactoRef)}>Contacto</li>
                         <li className='text-lg cursor-pointer mx-3 my-5 text-blue-900 dark:text-blue-200 dark:hover:text-cyan-200 hover:text-blue-700 border-b-2 border-transparent hover:border-blue-900 transition dark:hover:border-blue-300 duration-300 ease-in-out'>
@@ -96,7 +95,6 @@ const Nav = ({ homeRef, educationRef, workRef, portfolioRef, contactoRef, onTogg
                 <div className={toggleMenu ? '' : 'hidden'}>
                     <div className='grid grid-cols-1 bg-zinc-100 dark:bg-gray-900 cursor-pointer'>
                         <div className="mx-3 my-5 text-blue-900 dark:text-blue-300 dark:hover:text-blue-200 hover:text-blue-700 transition" onClick={() => executeScroll(educationRef)}>Educación</div>
-                        <div className="mx-3 my-5 text-blue-900 dark:text-blue-300 dark:hover:text-blue-200 hover:text-blue-700 transition" onClick={() => executeScroll(workRef)}>Trabajos</div>
                         <div className="mx-3 my-5 text-blue-900 dark:text-blue-300 dark:hover:text-blue-200 hover:text-blue-700 transition" onClick={() => executeScroll(portfolioRef)}>Portafolio</div>
                         <div className="mx-3 my-5 text-blue-900 dark:text-blue-300 dark:hover:text-blue-200 hover:text-blue-700 transition" onClick={() => executeScroll(contactoRef)}>Contacto</div>
                         <div className='mx-3 my-5 text-blue-900 dark:text-blue-300 dark:hover:text-blue-200 hover:text-blue-700 transition'>

@@ -24,18 +24,17 @@ const Portafolio = ({ portfolioRef }) => {
 
                 <div className='grid md:grid-cols-3 grid-cols-1 gap-4 mx-5'>
                 {portfolio && portfolio.map(p => (
-                    <div key={p.id} className='pb-2 border rounded-sm p-3 shadow'>
-                        <h3 className='text-lg border-b-2 border-blue-900 dark:border-blue-300 text-blue-950 dark:text-blue-300'>{p.title}</h3>
-                        <div className='pt-2'>
-                            <a href={p.url} className='py-2 text-blue-500 hover:text-blue-700 transition cursor-pointer'>Ver código en GitHub</a>
+                    <Link to={`/portfolio/detail/${p.id}`}>
+                        <div key={p.id} className='pb-2 border rounded-sm p-3 shadow'>
+                            <h3 className='text-lg border-b-2 border-blue-900 dark:border-blue-300 text-blue-950 dark:text-blue-300'>{p.title}</h3>
+                            <figure className="lg:flex-shrink-0">
+                                
+                                    <img className="pt-4 h-64 lg:w-96 w-full object-cover rounded" src={p.get_image_url} alt="" />
+                                
+                            </figure>
+                            <p className='pt-3 text-blue-950 dark:text-blue-200'>{p.description}</p>
                         </div>
-                        <figure className="lg:flex-shrink-0">
-                            <Link to={`/portfolio/detail/${p.id}`}>
-                                <img className="h-64 lg:w-96 w-full object-cover rounded" src={p.get_image_url} alt="" />
-                            </Link>
-                        </figure>
-                        <p className='pt-2 text-blue-950 dark:text-blue-200'>{p.description}</p>
-                    </div>
+                    </Link>
                 ))}
                 </div>
 

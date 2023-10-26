@@ -4,9 +4,9 @@ from rest_framework.permissions import AllowAny, IsAuthenticatedOrReadOnly
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-from .models import Education, Portfolio, Work
+from .models import Education, Portfolio
 from .serializers import (EducationSerializer, PortfolioSerializer,
-                          UserSerializer, WorkSerializer)
+                          UserSerializer)
 
 
 class UserViewSet(viewsets.ModelViewSet):
@@ -18,12 +18,6 @@ class UserViewSet(viewsets.ModelViewSet):
 class EducationViewSet(viewsets.ModelViewSet):
     queryset = Education.objects.all()
     serializer_class = EducationSerializer
-    permission_classes = [IsAuthenticatedOrReadOnly]
-
-
-class WorkViewSet(viewsets.ModelViewSet):
-    queryset = Work.objects.all()
-    serializer_class = WorkSerializer
     permission_classes = [IsAuthenticatedOrReadOnly]
 
 
