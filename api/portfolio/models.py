@@ -1,15 +1,22 @@
-from django.db import models
 from datetime import date
 
+from ckeditor_uploader.fields import RichTextUploadingField
+from django.db import models
 
-def proyect_image_directory(instance, filename):
+
+def proyect_image_directory(filename):
     return "portfolio/{0}".format(filename)
+
+
+def education_image_directory(filename):
+    return "education/{0}".format(filename)
 
 
 class Education(models.Model):
     title = models.CharField(max_length=255, default='')
     school = models.CharField(max_length=255)
     degree = models.CharField(max_length=255)
+    certified_image = models.ImageField(upload_to=education_image_directory, null=True, blank=True)
     url = models.URLField(default='')
     years = models.CharField(max_length=25)
     description = models.TextField()
@@ -32,7 +39,8 @@ class TechnologyTag(models.Model):
 
 class Portfolio(models.Model):
     title = models.CharField(max_length=255)
-    description = models.TextField()
+    description = models.CharField(max_length=255)
+    content = RichTextUploadingField(blank=True, null=True)
     image = models.ImageField(
         upload_to=proyect_image_directory, max_length=500, blank=True, null=True)
     github_url = models.URLField()
@@ -53,11 +61,6 @@ class Portfolio(models.Model):
     def get_view_count(self):
         views = ViewCount.objects.filter(project=self).count()
         return views
-
-    def get_image_url(self):
-        if self.image:
-            return self.image.url
-        return ''
 
 
 class ViewCount(models.Model):

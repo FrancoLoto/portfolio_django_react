@@ -6,9 +6,9 @@ from . import views
 router = routers.DefaultRouter()
 router.register(r'users', views.UserViewSet)
 router.register(r'education', views.EducationViewSet)
-router.register(r'portfolio', views.PortfolioViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),
+    path('portfolio', views.PortfolioListView.as_view()),
     path('portfolio/detail/<int:id>', views.PortfolioDetailView.as_view()),
 ]

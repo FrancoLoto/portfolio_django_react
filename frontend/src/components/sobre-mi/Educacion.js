@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 
 
-const Educacion = ( { educationRef }) => {
+const Educacion = ( { darkMode }) => {
     const [education, setEducation] = useState([])
 
     useEffect(() => {
@@ -16,7 +16,8 @@ const Educacion = ( { educationRef }) => {
     }
 
     return(
-            <div className='md:h-screen pt-24' ref={educationRef}>
+        <div className={`${darkMode  === "dark" ? "dark" : "light"} min-h-screen flex flex-col bg-zinc-100 dark:bg-gray-900`}>
+            <div className='md:h-screen'>
                 <div className='mb-5 mx-5'>
                 <h2 className='text-5xl mb-3 text-blue-900 dark:text-blue-100'>Mi educación</h2>
                 <p className='text-lg text-blue-700 dark:text-cyan-300'>Acá está la educación que tengo.</p>
@@ -35,6 +36,7 @@ const Educacion = ( { educationRef }) => {
                 </div>
 
             </div>
+        </div>
     )
 };
 
