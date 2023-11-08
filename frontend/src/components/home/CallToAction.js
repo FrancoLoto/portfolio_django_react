@@ -6,7 +6,7 @@ export default function CTA({ darkMode }) {
     return (
 
         <div className={`${darkMode  === "dark" ? "dark" : "light"}`}>
-            <div className="mx-auto max-w-full py-10 px-4 sm:px-6 lg:flex lg:items-center lg:justify-between lg:px-8 bg-gray-900 dark:bg-zinc-100">
+            <div className="mx-auto max-w-full py-10 px-4 sm:px-6 lg:flex lg:items-center lg:justify-between lg:px-8 bg-gray-900 dark:bg-zinc-100 ">
                 <h2 className="ml-8 lg:text-3xl font-bold tracking-tight text-gray-900">
                     <span className="block text-3xl text-cyan-400 dark:text-cyan-500 py-1">Trabajamos juntos?</span>
                     <span className="block text-3xl text-white dark:text-blue-900">Si te interesa lo que hago no dudes en contactarme.</span>

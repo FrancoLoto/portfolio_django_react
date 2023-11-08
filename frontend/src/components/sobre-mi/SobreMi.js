@@ -3,6 +3,7 @@ import Nav from "../navegacion/Nav"
 import HeroSection from "./HeroSection"
 import Educacion from "./Educacion"
 import { Helmet } from "react-helmet-async";
+import CTA from "../home/CallToAction";
 
 
 
@@ -37,6 +38,7 @@ const SobreMi = ({ darkMode, toggleDarkMode }) => {
                 <Nav onToggleDarkMode={toggleDarkMode}/>
                 <HeroSection />
                 <Educacion />
+                <CTA />
                 <Footer />
             </div>
         </>

@@ -86,7 +86,7 @@ const Footer = () => {
                     </p>
                     <div className="flex space-x-6">
                         {navigation.social.map((item) => (
-                        <a key={item.name} href={item.href} title={item.name} className="text-blue-900 hover:text-cyan-600 dark:text-white dark:hover:text-cyan-500" target="_blank" rel="noreferrer">
+                        <a key={item.name} href={item.href} title={item.name} className="text-blue-900 hover:text-cyan-500 dark:text-white dark:hover:text-cyan-500" target="_blank" rel="noreferrer">
                             <span className="sr-only">{item.name}</span>
                             <item.icon className="h-6 w-6" aria-hidden="true" />
                         </a>

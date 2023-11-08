@@ -5,7 +5,6 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 
 from .models import Education, Portfolio
-from .pagination import SmallSetPagination
 from .serializers import (EducationSerializer, PortfolioListSerializer,
                           PortfolioSerializer, UserSerializer)
 
@@ -29,13 +28,16 @@ class PortfolioListView(APIView):
         if Portfolio.objects.all().exists():
             projects = Portfolio.objects.all()
 
-            paginator = SmallSetPagination()
-            results = paginator.paginate_queryset(projects, request)
-            serializer = PortfolioListSerializer(results, many=True)
+            serializer = PortfolioListSerializer(projects, many=True)
 
-            return paginator.get_paginated_response({"portfolio": serializer.data})
+            return Response(
+                {"portfolio": serializer.data},
+                status=status.HTTP_200_OK
+                )
         else:
-            return Response({"error": "No se encontraron proyectos."}, status=status.HTTP_404_NOT_FOUND)
+            return Response(
+                {"error": "No se encontraron proyectos."},
+                status=status.HTTP_404_NOT_FOUND)
 
 
 class PortfolioDetailView(APIView):
@@ -46,8 +48,11 @@ class PortfolioDetailView(APIView):
                 project = Portfolio.objects.get(id=id)
                 serializer = PortfolioSerializer(project)
 
-                return Response({"project": serializer.data}, status=status.HTTP_200_OK)
+                return Response({"project": serializer.data},
+                                status=status.HTTP_200_OK)
             else:
-                return Response({"error": "El proyecto no fue encontrado."}, status=status.HTTP_404_NOT_FOUND)
+                return Response({"error": "El proyecto no fue encontrado."},
+                                status=status.HTTP_404_NOT_FOUND)
         else:
-            return Response({"error": "La solicitud es nula."}, status=status.HTTP_400_BAD_REQUEST)
+            return Response({"error": "La solicitud es nula."},
+                            status=status.HTTP_400_BAD_REQUEST)

@@ -2,6 +2,7 @@ import Nav from "../navegacion/Nav.js"
 import { Tweet } from 'react-tweet'
 import Footer from '../navegacion/Footer.js';
 import HeroSection from './HeroSection.js';
+import UltimosProyectos from "./UltimosProyectos.js";
 
 
 const Home = ({ darkMode,toggleDarkMode }) => {
@@ -12,11 +13,10 @@ const Home = ({ darkMode,toggleDarkMode }) => {
             <Nav onToggleDarkMode={toggleDarkMode} />
 
             <HeroSection />     
-            
-            <div className='flex justify-center mt-20'>
+            <UltimosProyectos />
+            <div className='flex justify-center pt-20 pb-12'>
               <Tweet id="1637494657104990218" className=""/>
             </div>
-
             <Footer />
           </div>
         </div>

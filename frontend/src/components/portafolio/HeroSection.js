@@ -3,7 +3,7 @@ import React from "react";
 const HeroSection = ({ darkMode }) => {
     return(
         <div className={`${darkMode  === "dark" ? "dark" : "light"} min-h-screen flex flex-col bg-zinc-100 dark:bg-gray-900`}>
-            <section className="grid grid-cols-1 gap-0 md:grid-cols-2">
+            <section className="grid grid-cols-1 gap-0 md:grid-cols-2 mt-28 min-h-screen mb-20">
                 <div className="flex flex-col items-start justify-center px-4 py-24 lg:px-20">
                     <span className="mb-3 px-1 text-white dark:text-white bg-cyan-500 badge dark:bg-cyan-500">PORTAFOLIO</span>
                     <h1 className="mb-6 text-4xl font-bold leading-tight text-blue-900 dark:text-white md:text-4xl lg:text-5xl">Hechale un vistazo a mis proyectos.</h1>

@@ -2,8 +2,8 @@ import React from "react";
 
 const HeroSection = ({ darkMode }) => {
     return(
-        <div className={`${darkMode  === "dark" ? "dark" : "light"} min-h-screen flex flex-col bg-zinc-100 dark:bg-gray-900`}>
-            <section className="grid grid-cols-1 gap-0 md:grid-cols-2">
+        <div className={`${darkMode  === "dark" ? "dark" : "light"} bg-zinc-100 dark:bg-gray-900`}>
+            <section className="grid grid-cols-1 gap-0 md:grid-cols-2 pt-28">
                 <div>
                     <img
                     src="https://images.unsplash.com/photo-1531548731165-c6ae86ff6491?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=967&q=80"

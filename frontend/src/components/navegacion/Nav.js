@@ -18,7 +18,7 @@ const Nav = ({ homeRef, onToggleDarkMode }) => {
     }
     return(
         <>
-            <nav className='bg-zinc-100 dark:bg-gray-900 hidden md:block sticky top-0 px-2 sm:px-4 py-2.5'>
+            <nav className='bg-zinc-100 dark:bg-gray-900 fixed hidden md:block top-0 px-2 sm:px-4 w-full z-50 py-2.5'>
                 <div className="flex items-center justify-between mx-auto px-8 sm:px-24">
                     <Link 
                       to="/" 
@@ -30,7 +30,7 @@ const Nav = ({ homeRef, onToggleDarkMode }) => {
                       }}
                       >
                         <span className='cursor-pointer items-center mx-4 my-4 text-3xl font-semibold transition ease-in-duration-100'>
-                            <span className=" text-blue-900 dark:text-white dark:hover:text-cyan-100 hover:text-blue-900 ">franco</span><span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-cyan-500 to-cyan-700">loto</span>
+                            <span className=" text-blue-900 dark:text-white">franco</span><span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-cyan-500 to-cyan-700">loto</span>
                         </span>
                     </Link>
                     <ul className='flex '>
@@ -41,8 +41,9 @@ const Nav = ({ homeRef, onToggleDarkMode }) => {
                             navigate('/sobre-mi');
                             window.scrollTo(0, 0);
                           }}><li 
-                           className='text-md cursor-pointer mx-3 my-5 text-blue-900 dark:text-white dark:hover:text-cyan-100 hover:text-blue-950 border-b-2 border-transparent hover:border-cyan-500 transition dark:hover:border-cyan-600 duration-300 ease-in-out'
-                        >SOBRE MÍ</li>
+                              className='text-lg cursor-pointer mx-3 my-5 text-blue-900 dark:text-white dark:hover:text-cyan-500 hover:text-cyan-500 border-b-2 border-transparent hover:border-blue-900 transition dark:hover:border-white duration-300 ease-in-out'>
+                                Sobre Mí
+                            </li>
                         </Link>
                         <Link 
                           to="/portfolio"
@@ -50,15 +51,23 @@ const Nav = ({ homeRef, onToggleDarkMode }) => {
                             e.preventDefault();
                             navigate('/portfolio');
                             window.scrollTo(0, 0);
-                          }}><li className='text-md cursor-pointer mx-3 my-5 text-blue-900 dark:text-white dark:hover:text-cyan-100 hover:text-blue-950 border-b-2 border-transparent hover:border-cyan-500 transition dark:hover:border-cyan-600 duration-300 ease-in-out'>PORTAFOLIO</li></Link>
+                          }}><li 
+                              className='text-lg cursor-pointer mx-3 my-5 text-blue-900 dark:text-white dark:hover:text-cyan-500 hover:text-cyan-500 border-b-2 border-transparent hover:border-blue-900 transition dark:hover:border-white duration-300 ease-in-out'>
+                                Portafolio
+                            </li>
+                        </Link>
                         <Link 
                           to="/contacto"
                           onClick={(e) => {
                             e.preventDefault();
                             navigate('/contacto');
                             window.scrollTo(0, 0);
-                          }}><li className='text-md cursor-pointer mx-3 my-5 text-blue-900 dark:text-white dark:hover:text-cyan-100 hover:text-blue-950 border-b-2 border-transparent hover:border-cyan-500 transition dark:hover:border-cyan-600 duration-300 ease-in-out'>CONTACTO</li></Link>
-                        <li className='text-lg cursor-pointer mx-3 my-5 text-blue-900 dark:text-white dark:hover:text-cyan-100 hover:text-blue-950 border-b-2 border-transparent hover:border-cyan-500 transition dark:hover:border-cyan-600 duration-300 ease-in-out'>
+                          }}><li 
+                              className='text-lg cursor-pointer mx-3 my-5 text-blue-900 dark:text-white dark:hover:text-cyan-500 hover:text-cyan-500 border-b-2 border-transparent hover:border-blue-900 transition dark:hover:border-white duration-300 ease-in-out'>
+                                Contacto
+                            </li>
+                        </Link>
+                        <li className='text-lg cursor-pointer mx-3 my-5 text-blue-900 dark:text-white dark:hover:text-cyan-500 hover:text-cyan-500 border-b-2 border-transparent hover:border-blue-900 transition dark:hover:border-white duration-300 ease-in-out'>
                             <a href="/Franco_Loto.pdf" target="_blank" rel="noopener noreferrer">CV</a>
                         </li>
                         <li className='cursor-pointer mx-14 my-5'>
@@ -69,7 +78,7 @@ const Nav = ({ homeRef, onToggleDarkMode }) => {
                                     viewBox="0 0 24 24"
                                     strokeWidth={1.5}
                                     stroke="currentColor"
-                                    className="w-6 h-6 text-blue-900 hover:text-blue-950 dark:text-white dark:hover:text-cyan-100"
+                                    className="w-6 h-6 text-blue-900 hover:text-cyan-500 dark:text-white dark:hover:text-cyan-500"
                                 >
                                     <path
                                     strokeLinecap="round"
@@ -85,16 +94,16 @@ const Nav = ({ homeRef, onToggleDarkMode }) => {
 
         
             {/* Mobile Navbar */}
-            <nav className='bg-zinc-100 dark:bg-gray-900 md:hidden block sticky top-0 px-2 sm:px-4 py-2.5'>
+            <nav className='bg-zinc-100 dark:bg-gray-900 md:hidden block fixed top-0 px-2 sm:px-4 w-full z-50 py-2.5'>
                 <div className='flex items-center justify-between mx-auto px-8 sm:px-24'>
                     <Link to="/">
                         <span className='cursor-pointer items-center hover:scale-110 mx-4 my-4 text-3xl font-semibold  transition ease-in-duration-100' onClick={() => executeScroll(homeRef)}>
-                            <span className="text-blue-900 dark:text-blue-200 dark:hover:text-cyan-200 hover:text-blue-900">franco</span><span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-cyan-500 to-blue-900">loto</span>
+                            <span className="text-blue-900 dark:text-white">franco</span><span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-cyan-500 to-cyan-700">loto</span>
                         </span>
                     </Link>
                     <svg
                       onClick={navIconHandler}
-                      className='cursor-pointer w-8 h-8 text-blue-900 dark:text-blue-200 dark:hover:text-cyan-200 my-4 mr-5'
+                      className='cursor-pointer w-8 h-8 text-blue-900 dark:text-white dark:hover:text-cyan-500 my-4 mr-5'
                       x-show='!showMenu'
                       fill='none'
                       strokeLinecap='round'
@@ -106,14 +115,14 @@ const Nav = ({ homeRef, onToggleDarkMode }) => {
                     <path d='M4 6h16M4 12h16M4 18h16'></path>
                     </svg>
 
-                    <button onClick={onToggleDarkMode} className="mr-2 -ml-48">
+                    <button onClick={onToggleDarkMode} className="mr-2 -ml-40">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     fill="none"
                                     viewBox="0 0 24 24"
                                     strokeWidth={1.5}
                                     stroke="currentColor"
-                                    className="w-6 h-6 text-blue-900 hover:text-blue-700 dark:text-blue-200 dark:hover:text-cyan-200"
+                                    className="w-6 h-6 text-blue-900 hover:text-cyan-500 dark:text-white dark:hover:text-cyan-500"
                                 >
                                     <path
                                     strokeLinecap="round"
@@ -129,18 +138,16 @@ const Nav = ({ homeRef, onToggleDarkMode }) => {
                 
 
                 <div className={toggleMenu ? '' : 'hidden'}>
-                    <div className='grid grid-cols-1 bg-zinc-100 dark:bg-gray-900 cursor-pointer'>
-                        <Link to="/sobre-mi"><div className="mx-3 my-5 text-blue-900 dark:text-blue-300 dark:hover:text-blue-200 hover:text-blue-700 transition">SOBRE MÍ</div></Link>
-                        <Link to="/portfolio"><div className="mx-3 my-5 text-blue-900 dark:text-blue-300 dark:hover:text-blue-200 hover:text-blue-700 transition">PORTAFOLIO</div></Link>
-                        <Link to="/contacto"><div className="mx-3 my-5 text-blue-900 dark:text-blue-300 dark:hover:text-blue-200 hover:text-blue-700 transition">CONTACTO</div></Link>
-                        <div className='mx-3 my-5 text-blue-900 dark:text-blue-300 dark:hover:text-blue-200 hover:text-blue-700 transition'>
-                            <a href="/Franco_Loto.pdf" target="_blank" rel="noopener noreferrer">DESCARGAR CV</a>
+                    <div className=' bg-zinc-100 dark:bg-gray-900 cursor-pointer mt-4'>
+                        <Link to="/sobre-mi"><div className="block px-4 py-3 text-blue-900 dark:text-white dark:hover:text-cyan-500 hover:text-cyan-500 transition">Sobre Mí</div></Link>
+                        <Link to="/portfolio"><div className="block px-4 py-3 text-blue-900 dark:text-white dark:hover:text-cyan-500 hover:text-cyan-500 transition">Portafolio</div></Link>
+                        <Link to="/contacto"><div className="block px-4 py-3 text-blue-900 dark:text-white dark:hover:text-cyan-500 hover:text-cyan-500 transition">Contacto</div></Link>
+                        <div className='block px-4 py-3 text-blue-900 dark:text-white dark:hover:text-cyan-500 hover:text-cyan-500 transition'>
+                            <a href="/Franco_Loto.pdf" target="_blank" rel="noopener noreferrer">Descargar CV</a>
                         </div>
                     </div>
                 </div>
 
-                
-                
             </nav>
         </>
     )

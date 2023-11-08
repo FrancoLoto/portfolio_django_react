@@ -34,7 +34,7 @@ const Contacto = ({ darkMode, toggleDarkMode }) => {
 
             <div className={`${darkMode  === "dark" ? "dark" : "light"}`}>
                 <Nav onToggleDarkMode={toggleDarkMode}/>
-                <section className='bg-zinc-100 dark:bg-gray-900 grid grid-cols-1 gap-0 md:grid-cols-2' id="contacto">
+                <section className='bg-zinc-100 dark:bg-gray-900 grid grid-cols-1 gap-0 md:grid-cols-2 mt-16' id="contacto">
                     <div>
                         <div
                         
@@ -84,7 +84,7 @@ const Contacto = ({ darkMode, toggleDarkMode }) => {
                                 type="submit"
                                 value="Enviar"
                                 id="submit-btn"
-                                className="w-full py-2 px-3 mt-6 bg-blue-900 hover:bg-blue-950 dark:bg-blue-300 dark:hover:bg-blue-400 border-2 border-blue-900 dark:border-blue-900 rounded-lg text-base text-blue-100 dark:text-blue-900 font-bold transition duration-300 cursor-pointer"
+                                className="w-full py-2 px-3 mt-6 bg-blue-900 hover:bg-blue-950 dark:bg-cyan-500 dark:hover:bg-cyan-600 border-2 border-blue-900 dark:border-cyan-500 dark:hover:border-cyan-600 rounded-lg text-base text-white font-bold transition duration-300 cursor-pointer"
                                 />
 
                             </form>
