@@ -25,19 +25,16 @@ export default function ListaProyectos() {
     }, [])
 
     return(
-        <div className='pt-12 bg-zinc-100 dark:bg-gray-900'>
-            <div className='mb-5 mx-5 pb-4'>  
-                <p className='ml-16 text-lg text-gray-500 dark:text-white'>Este es mi portafolio.</p>
-            </div>
+        <div className='pt-12 -mt-24 lg:-mt-20 md:-mt-20 bg-zinc-400 dark:bg-gray-700'>
 
-            <div className='group grid md:grid-cols-3 gap-8 mx-5 lg:ml-8'>
+            <div className='group grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-8 lg:mx-12 mx-8 '>
             {projects && projects.map(p => (
  
                 <Link 
                   to={`/portfolio/detail/${p.id}`}
                   className="relative block">
                     <div 
-                      className='overflow-hidden transition-all hover:scale-105 card border border-gray-200 dark:border-cyan-500 rounded-lg p-3 shadow'>
+                      className='overflow-hidden transition-all hover:scale-105 card border border-gray-200 dark:border-zinc-600 rounded-lg p-3 shadow  bg-zinc-100 dark:bg-zinc-400'>
                         <img className="rounded-t-lg pt-4 w-full h-60" src={p.image} alt="thumbnail" />
                         <div className="p-5">
                             <h3 className='bg-gradient-to-r from-cyan-200 to-cyan-300 bg-[length:0px_8px] bg-left-bottom

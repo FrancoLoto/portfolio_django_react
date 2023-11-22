@@ -14,7 +14,7 @@ const Home = ({ darkMode,toggleDarkMode }) => {
 
             <HeroSection />     
             <UltimosProyectos />
-            <div className='flex justify-center pt-20 pb-12'>
+            <div className='flex justify-center pt-20 pb-12 mx-4'>
               <Tweet id="1637494657104990218" className=""/>
             </div>
             <Footer />

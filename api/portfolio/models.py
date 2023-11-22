@@ -8,28 +8,18 @@ def proyect_image_directory(instance, filename):
     return "portfolio/{0}".format(filename)
 
 
-def education_image_directory(instance, filename):
-    return "education/{0}".format(filename)
-
-
 class Education(models.Model):
     title = models.CharField(max_length=255, default='')
     school = models.CharField(max_length=255)
     degree = models.CharField(max_length=255)
-    certified_image = models.ImageField(upload_to=education_image_directory,
-                                        null=True,
-                                        blank=True
-                                        )
-    url = models.URLField(default='')
+    url = models.URLField(blank=True, null=True)
     years = models.CharField(max_length=25)
     description = models.TextField()
-    ordinal = models.IntegerField()
-    created_at = models.DateField(default=date.today)
 
     class Meta:
         verbose_name = "Educación"
         verbose_name_plural = "Educación"
-        ordering = ('-created_at',)
+        ordering = ('-id',)
 
     def __str__(self):
         return self.title
@@ -62,7 +52,7 @@ class Portfolio(models.Model):
         max_length=500,
         blank=True,
         null=True
-        )
+    )
     github_url = models.URLField(blank=True, null=True)
     web_url = models.URLField(blank=True, null=True)
     ordinal = models.IntegerField()

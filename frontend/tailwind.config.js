@@ -5,7 +5,11 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        principal: ['Archivo Black', 'sans-serif'],
+      },
+    },
   },
   plugins: [],
 }

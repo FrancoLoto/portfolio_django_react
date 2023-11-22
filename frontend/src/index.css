@@ -2,9 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-    font-family: 'Nunito', sans-serif;
-}
 
 ::-webkit-scrollbar {
     width: 10px;

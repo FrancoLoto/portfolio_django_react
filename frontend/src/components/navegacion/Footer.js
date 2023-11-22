@@ -73,7 +73,7 @@ const navigation = {
 const Footer = () => {
     return(
         <>
-            <footer className="bg-zinc-100 dark:bg-gray-900" aria-labelledby="footer-heading">
+            <footer className="bg-zinc-100 dark:bg-gray-900 text-center lg:text-left md:text-center items-center" aria-labelledby="footer-heading">
                 <h2 id="footer-heading" className="sr-only">
                 Footer
                 </h2>
@@ -84,7 +84,7 @@ const Footer = () => {
                     <p className="text-base text-blue-900 dark:text-white mt-6">
                         ¡Seguíme en mis redes sociales!
                     </p>
-                    <div className="flex space-x-6">
+                    <div className="flex space-x-6 justify-center md:justify-center lg:justify-start">
                         {navigation.social.map((item) => (
                         <a key={item.name} href={item.href} title={item.name} className="text-blue-900 hover:text-cyan-500 dark:text-white dark:hover:text-cyan-500" target="_blank" rel="noreferrer">
                             <span className="sr-only">{item.name}</span>
@@ -96,7 +96,7 @@ const Footer = () => {
                     
                 
                 <div className="mt-4 border-t border-slate-400 pt-4">
-                    <p className="text-base text-blue-900 dark:text-white xl:text-center">&copy; 2023 | Todos los derechos reservados.</p>
+                    <p className="text-base text-blue-900 dark:text-white text-center">&copy; 2023 | Todos los derechos reservados.</p>
                 </div>
                 </div>
             </footer>

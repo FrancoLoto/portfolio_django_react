@@ -4,7 +4,7 @@ from .models import Category, Education, Portfolio, TechnologyTag
 
 
 class EducationAdmin(admin.ModelAdmin):
-    list_display = ("id", "title", "school", "degree", "ordinal")
+    list_display = ("id", "title", "school", "degree")
     list_display_links = ("title",)
     list_per_page = 25
     search_fields = ("title", "school")
