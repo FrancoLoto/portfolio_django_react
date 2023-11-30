@@ -4,6 +4,7 @@ import axios from "axios";
 import Footer from "../navegacion/Footer";
 import Nav from "../navegacion/Nav";
 import DOMPurify from 'dompurify'
+import 'ldrs/ring2'
 
 
 function PortafolioDetail({ darkMode, toggleDarkMode }) {
@@ -23,7 +24,16 @@ function PortafolioDetail({ darkMode, toggleDarkMode }) {
       }, [projectId]);
     
       if (!project) {
-        return <div>Cargando...</div>;
+        return <div className="items-center">
+          <l-ring-2
+            size="40"
+            stroke="5"
+            stroke-length="0.25"
+            bg-opacity="0.1"
+            speed="0.8"
+            color="black" 
+          ></l-ring-2>
+        </div>;
       }
 
 

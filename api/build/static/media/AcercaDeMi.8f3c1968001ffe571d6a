@@ -1,0 +1,9 @@
+
+
+const AcercaDeMi = ({ darkMode }) => {
+    return(
+        <div className={`${darkMode  === "dark" ? "dark" : "light"} lg:pb-20 bg-zinc-400 dark:bg-gray-700`}>Acerca de mi</div>
+    )
+}
+
+export default AcercaDeMi

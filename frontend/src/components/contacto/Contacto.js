@@ -39,10 +39,12 @@ const Contacto = ({ darkMode, toggleDarkMode }) => {
 
                         <div className='lg:mt-28 md:mt-36 mt-24 md:pr-10 lg:pl-10 md:pl-3 pl-3 pr-6'>
                             <h2 className="text-2xl font-bold tracking-tight py-2 text-white bg-cyan-500 badge dark:bg-cyan-500 sm:text-3xl text-center">
-                                Contacto
+                            ¡Trabajemos Juntos!
                             </h2>
                             <p className="mt-6 md:mt-8 text-lg leading-6 text-gray-100">
-                            Dejanos un mensaje y nuestro equipo se encargará de responder a la brevedad. También podes comunicarte con nosotros por teléfono o a través de nuestras redes sociales.
+                            Si estás buscando llevar tu presencia en línea al siguiente nivel o necesitas una aplicación web a medida, estaré encantado de colaborar contigo. ¡Vamos a construir algo increíble juntos!
+
+                            ¡Espero tener la oportunidad de trabajar contigo y hacer realidad tus ideas en el mundo digital!
                             </p>
                             <dl className="mt-8 text-base text-gray-500">
                             

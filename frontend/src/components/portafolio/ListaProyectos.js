@@ -12,22 +12,30 @@ export default function ListaProyectos() {
     const firstIndex = lastIndex - projectsPerPage
 
     const projectList = async() => {
-        const data = await fetch('http://127.0.0.1:8000/portfolio')
-        const projects = await data.json()
-        console.log(projects)
-        setProjects(projects.portfolio)
-    }
+        try {
+            const data = await fetch('http://127.0.0.1:8000/portfolio');
+            const projects = await data.json();
+            console.log(projects);
+            setProjects(projects.portfolio);
+        } catch(error) {
+            console.error("Error listando proyectos:", error);
+        }
+    };
 
     const totalProjects = projects.length
 
     useEffect(() => {
         projectList()
-    }, [])
+    }, []);
+
+    if (projects.length === 0) {
+        return null;
+    }
 
     return(
         <div className='pt-12 -mt-24 lg:-mt-20 md:-mt-20 bg-zinc-400 dark:bg-gray-700'>
 
-            <div className='group grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-8 lg:mx-12 mx-8 '>
+            <div className='group grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-8 lg:mx-12 mx-8'>
             {projects && projects.map(p => (
  
                 <Link 
@@ -47,7 +55,7 @@ export default function ListaProyectos() {
                                 {p.title}
                             </h3>
                             
-                            <p className='mb-3 description pt-2 text-blue-950 dark:text-white'>
+                            <p className='mb-3 pt-2 text-blue-950 dark:text-white'>
                                 {p.description}
                             </p>
                         </div>

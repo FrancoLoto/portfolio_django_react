@@ -30,9 +30,15 @@
     position: relative;
 }
 
+.second-card {
+    height: 300px; /* Establece la altura deseada */
+    overflow: hidden; /* Oculta el contenido que excede el alto */
+    position: relative;
+}
+
 
 .description {
     max-height: 150px; /* Establece la altura máxima de la descripción */
-    overflow: hidden;
-    text-overflow: ellipsis; /* Agrega puntos suspensivos (...) al final del texto recortado */
+    overflow-y: auto;
 }
+

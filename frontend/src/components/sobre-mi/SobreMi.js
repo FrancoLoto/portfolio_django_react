@@ -4,6 +4,7 @@ import HeroSection from "./HeroSection"
 import Educacion from "./Educacion"
 import { Helmet } from "react-helmet-async";
 import CTA from "../home/CallToAction";
+import AcercaDeMi from "./AcercaDeMi";
 
 
 
@@ -37,6 +38,7 @@ const SobreMi = ({ darkMode, toggleDarkMode }) => {
             <div className={`${darkMode  === "dark" ? "dark" : "light"} min-h-screen flex flex-col`}>
                 <Nav onToggleDarkMode={toggleDarkMode}/>
                 <HeroSection />
+                <AcercaDeMi />
                 <Educacion />
                 <CTA />
                 <Footer />
