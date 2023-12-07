@@ -2,19 +2,27 @@ import { useState, useEffect } from 'react';
 
 
 
-const Educacion = ({ darkMode }) => {
+const Educacion = ( { darkMode }) => {
     const [education, setEducation] = useState([])
 
     useEffect(() => {
-        getData()
-      }, [])
-
-    const getData = async () => {
-        const educationResponse = await fetch('/education')
-        const educationData = await educationResponse.json()
-        setEducation(educationData)
+        getData();
+    }, []);
     
-    }
+    const getData = async () => {
+        try {
+            // Determinar la URL base según el entorno
+            const baseUrl = process.env.NODE_ENV === 'production'
+                ? 'https://francolotodev.com'  // Reemplaza con la URL de tu backend en producción
+                : 'http://127.0.0.1:8000';  // URL de desarrollo
+    
+            const educationResponse = await fetch(`${baseUrl}/education`);
+            const educationData = await educationResponse.json();
+            setEducation(educationData);
+        } catch (error) {
+            console.error("Error al obtener datos de educación:", error);
+        }
+    };
 
     return(
         <div className={`${darkMode  === "dark" ? "dark" : "light"} lg:pb-20 bg-zinc-400 dark:bg-gray-700`}>

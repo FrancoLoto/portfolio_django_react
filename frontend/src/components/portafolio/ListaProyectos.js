@@ -1,36 +1,52 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Pagination } from "../paginacion/Pagination";
+import ProjectsSkeleton from "./ProjectsSkeleton";
 
-export default function ListaProyectos() {
-    
+export default function ListaProyectos() {  
     const [projects, setProjects] = useState([])
+    const [loading, setLoading] = useState(true);
     const [projectsPerPage, setProjectsPerPage] = useState(6)
     const [currentPage, setCurrentPage] = useState(1)
 
     const lastIndex = currentPage * projectsPerPage
     const firstIndex = lastIndex - projectsPerPage
 
-    const projectList = async() => {
-        try {
-            const data = await fetch('http://127.0.0.1:8000/portfolio');
-            const projects = await data.json();
-            console.log(projects);
-            setProjects(projects.portfolio);
-        } catch(error) {
-            console.error("Error listando proyectos:", error);
-        }
-    };
+    useEffect (() => {
+        const fetchProjects = async () => {
+            try {
+                const apiUrl = process.env.NODE_ENV === 'production'
+                    ? 'https://francolotodev.com/portfolio'
+                    : 'http://127.0.0.1:8000/portfolio'
+
+                const data = await fetch(apiUrl);
+                const projects = await data.json();
+                setProjects(projects.portfolio);
+                setLoading(false);
+            } catch(error) {
+                console.error("Error listando proyectos:", error);
+                setLoading(false)
+            }
+        };
+
+        fetchProjects();
+    }, []);
+    
 
     const totalProjects = projects.length
 
-    useEffect(() => {
-        projectList()
-    }, []);
-
-    if (projects.length === 0) {
-        return null;
-    }
+    if (loading) {
+        // Muestra el esqueleto mientras se cargan los proyectos
+        return (
+          <div className="pt-12 pb-16 -mt-24 lg:-mt-20 md:-mt-20 bg-zinc-400 dark:bg-gray-700">
+            <div className="group grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-8 lg:mx-12 mx-8">
+              {[...Array(6)].map((_, index) => (
+                <ProjectsSkeleton key={index} />
+              ))}
+            </div>
+          </div>
+        );
+      }
 
     return(
         <div className='pt-12 -mt-24 lg:-mt-20 md:-mt-20 bg-zinc-400 dark:bg-gray-700'>

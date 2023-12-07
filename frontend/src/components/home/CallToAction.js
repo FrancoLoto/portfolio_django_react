@@ -11,7 +11,7 @@ export default function CTA({ darkMode }) {
                     <span className="block text-3xl text-cyan-400 dark:text-cyan-500 py-1">Trabajamos juntos?</span>
                     <span className="block text-3xl text-white dark:text-blue-900">Si te interesa lo que hago contáctame.</span>
                 </h2>
-                <div className="mt-8 flex lg:mt-0 lg:flex-shrink-0 mr-8">
+                <div className="mt-8 flex lg:mt-0 lg:flex-shrink-0 mr-8 pl-8">
                     <div className="inline-flex rounded-md shadow">
                         <Link
                         to="/contacto"

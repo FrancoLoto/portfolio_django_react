@@ -1,17 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.85075126.css",
-    "main.js": "/static/js/main.19c0d971.js",
+    "main.css": "/static/css/main.ee09f359.css",
+    "main.js": "/static/js/main.f31c1b6a.js",
     "static/media/foto-hero-portafolio.jpg": "/static/media/foto-hero-portafolio.c6baa3dcbbb216e7d70a.jpg",
     "static/media/foto-hero-sobre-mi.jpg": "/static/media/foto-hero-sobre-mi.dd80ce674f302571d894.jpg",
     "static/media/foto-hero-home.png": "/static/media/foto-hero-home.ba82e02c19cb3712241d.png",
     "index.html": "/index.html",
-    "static/media/AcercaDeMi": "/static/media/AcercaDeMi.8f3c1968001ffe571d6a",
-    "main.85075126.css.map": "/static/css/main.85075126.css.map",
-    "main.19c0d971.js.map": "/static/js/main.19c0d971.js.map"
+    "main.ee09f359.css.map": "/static/css/main.ee09f359.css.map",
+    "main.f31c1b6a.js.map": "/static/js/main.f31c1b6a.js.map"
   },
   "entrypoints": [
-    "static/css/main.85075126.css",
-    "static/js/main.19c0d971.js"
+    "static/css/main.ee09f359.css",
+    "static/js/main.f31c1b6a.js"
   ]
 }

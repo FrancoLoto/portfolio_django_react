@@ -13,15 +13,23 @@ function PortafolioDetail({ darkMode, toggleDarkMode }) {
     const { projectId } = useParams();
 
     useEffect(() => {
-        // Realizar una solicitud GET al endpoint de detalle del proyecto en tu API
-        axios.get(`/portfolio/detail/${projectId}`)
-          .then((response) => {
+        const fetchProjectDetails = async () => {
+          try {
+            const apiUrl = process.env.NODE_ENV === 'production'
+                ? 'https://francolotodev.com'
+                : 'http://127.0.0.1:8000';
+
+            const response  = await axios.get(`${apiUrl}/portfolio/detail/${projectId}`);
             setProject(response.data.project);
-          })
-          .catch((error) => {
+          } catch(error) {
             console.error("Error al obtener los detalles del proyecto", error);
-          });
+          }
+      
+        };
+
+        fetchProjectDetails();
       }, [projectId]);
+        
     
       if (!project) {
         return <div className="items-center">
@@ -94,7 +102,7 @@ function PortafolioDetail({ darkMode, toggleDarkMode }) {
                     </div>
 
                     <div className="w-full mx-auto prose md:w-3/4 lg:w-1/2 dark:text-blue-50">
-                      <p className="text-blue-950 dark:text-blue-50 pb-10">
+                      <p className=" text-xl font-principal font-semibold text-blue-950 dark:text-gray-300 pb-10">
                         {project.description}
                       </p>
                       <p dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(project.content)}} className="text-blue-950 dark:text-white" />

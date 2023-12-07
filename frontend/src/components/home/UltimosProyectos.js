@@ -1,24 +1,75 @@
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import ProjectsSkeleton from "./ProjectsSkeleton";
 
 export default function UltimosProyectos() {
     const [projects, setProjects] = useState([]);
+    const [loading, setLoading] = useState(true);
 
     const navigate = useNavigate();
 
     useEffect(() => {
-        fetch("http://127.0.0.1:8000/portfolio")
-          .then((response) => response.json())
-          .then((data) => {
-            const ultimosProyectos = data.portfolio.slice(0, 3);
+      const fetchProjects = async () => {
+          try {
+              // Determinar la URL base según el entorno
+              const baseUrl = process.env.NODE_ENV === 'production'
+                  ? 'https://francolotodev.com'  // Reemplaza con la URL de tu backend en producción
+                  : 'http://127.0.0.1:8000';  // URL de desarrollo
+  
+              const response = await fetch(`${baseUrl}/portfolio`);
+              const data = await response.json();
+  
+              // Tomar los últimos 3 proyectos
+              const ultimosProyectos = data.portfolio.slice(0, 3);
+  
+              setProjects(ultimosProyectos);
+              setLoading(false);
+          } catch (error) {
+              console.log("Error al obtener los proyectos:", error);
+              setLoading(false);
+          }
+      };
+  
+      fetchProjects();
+  }, []);
 
-            console.log(ultimosProyectos)
-            setProjects(ultimosProyectos);
-          })
-          .catch((error) => {
-            console.log("Error al obtener los proyectos:", error);
-          });
-    }, [])
+    if (loading) {
+        // Muestra el esqueleto mientras se cargan los proyectos
+        return (
+          <div className="pt-20 pb-16 -mt-24 lg:-mt-20 md:-mt-20 bg-zinc-400 dark:bg-gray-700">
+            <div className="bg-cyan-500 pt-8 shadow-xl shadow-cyan-700 dark:shadow-cyan-900 mb-12 rounded-md lg:mx-36 md:mx-36 mx-16">
+                    <h3 className="text-3xl text-center text-zinc-100 dark:text-white pb-8">
+                        Mis últimos proyectos
+                    </h3>
+            </div>
+            <Link 
+                  to="/portfolio"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    navigate('/portfolio');
+                    window.scrollTo(0, 0);
+                  }}
+                  >
+                <div className="flex justify-between items-center px-3 py-3">
+                    <span className="text-white hover:underline ml-auto">
+                        Ver todo
+                        <button type="button" className="text-zinc-400 bg-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm p-2.5 text-center inline-flex items-center mr-2 ml-2 dark:bg-white dark:text-gray-700 dark:focus:ring-blue-800">
+                            <svg className="w-2 h-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                            </svg>
+                            <span className="sr-only">Icon description</span>
+                        </button>
+                    </span>
+                </div>
+                </Link>
+            <div className="pt-10 group grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-8 lg:mx-12 mx-8">
+              {[...Array(3)].map((_, index) => (
+                <ProjectsSkeleton key={index} />
+              ))}
+            </div>
+          </div>
+        );
+      }
     
 
     return(
